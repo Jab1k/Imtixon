@@ -134,390 +134,379 @@ class _InterfaceState extends State<Interface> {
               ),
             ],
           ),
-          SizedBox(
-            height: 600,
-            child: Expanded(
-              child: Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16),
-                  ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 16, top: 20),
-                  child: SingleChildScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(top: 14),
-                          child: Text('News'),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16, top: 20),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(top: 14),
+                        child: Text('News'),
+                      ),
+                      const Text(
+                        'Agriculture Sector has beaten by Pandemic and expect to decrease production by 50%',
+                        style: TextStyle(color: Colors.black, fontSize: 18),
+                      ),
+                      Container(
+                        width: 356,
+                        height: 224,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('asset/image 8.png'))),
+                        child: Center(
+                          child: Image.asset('asset/gg.png'),
                         ),
-                        const Text(
-                          'Agriculture Sector has beaten by Pandemic and expect to decrease production by 50%',
-                          style: TextStyle(color: Colors.black, fontSize: 18),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text('Blogs'),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 200,
+                        child: ListView.builder(
+                          itemCount: images.length,
+                          itemBuilder: (context, index) {
+                            return InkWell(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) {
+                                    return Blogs(
+                                      image: images[index],
+                                    );
+                                  },
+                                ));
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Row(
+                                  children: [
+                                    Image.network(
+                                      images[index],
+                                      width: 150,
+                                      height: 100,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 20),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Text('Blog ${index + 1}'),
+                                          const Text(
+                                            'What is Lorem Ipsum Lorem\nIpsum is simply dummy\ntext of the printing ',
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
                         ),
-                        Container(
-                          width: 356,
-                          height: 224,
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage('asset/image 8.png'))),
-                          child: Center(
-                            child: Image.asset('asset/gg.png'),
-                          ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: Image.asset('asset/image 10.png'),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 40),
+                        child: Text(
+                          'More Videos',
+                          style: TextStyle(fontSize: 16, color: Colors.grey),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 20),
-                          child: Text('Blogs'),
-                        ),
-                        SizedBox(
-                          width: double.infinity,
-                          height: 200,
-                          child: ListView.builder(
-                            itemCount: images.length,
-                            itemBuilder: (context, index) {
-                              return InkWell(
+                      ),
+                      SizedBox(
+                        height: 200,
+                        width: double.infinity,
+                        child: ListView.builder(
+                          itemCount: 4,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(top: 20),
+                              child: InkWell(
                                 onTap: () {
                                   Navigator.push(context, MaterialPageRoute(
                                     builder: (context) {
-                                      return Blogs(
-                                        image: images[index],
+                                      return const Blogs(
+                                        image:
+                                            'https://www.agro.uz/wp-content/uploads/2021/10/limon-1-1330x700.jpg',
                                       );
                                     },
                                   ));
                                 },
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 10),
-                                  child: Row(
-                                    children: [
-                                      Image.network(
-                                        images[index],
-                                        width: 150,
-                                        height: 100,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 20),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            Text('Blog ${index + 1}'),
-                                            const Text(
-                                              'What is Lorem Ipsum Lorem\nIpsum is simply dummy\ntext of the printing ',
-                                              textAlign: TextAlign.center,
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 15),
-                          child: Image.asset('asset/image 10.png'),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 40),
-                          child: Text(
-                            'More Videos',
-                            style: TextStyle(fontSize: 16, color: Colors.grey),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 200,
-                          width: double.infinity,
-                          child: ListView.builder(
-                            itemCount: 4,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: const EdgeInsets.only(top: 20),
-                                child: InkWell(
-                                  onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                      builder: (context) {
-                                        return const Blogs(
-                                          image:
-                                              'https://www.agro.uz/wp-content/uploads/2021/10/limon-1-1330x700.jpg',
-                                        );
-                                      },
-                                    ));
-                                  },
-                                  child: Row(
-                                    children: [
-                                      Image.network(
-                                        'https://www.agro.uz/wp-content/uploads/2021/10/limon-1-1330x700.jpg',
-                                        height: 71,
-                                        width: 104,
-                                      ),
-                                      const Padding(
-                                        padding: EdgeInsets.only(left: 19),
-                                        child: Text(
-                                            'Weather tips for growing corn in hilly\nregion of Nepal'),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 47, bottom: 16),
-                          child: Text(
-                            'Products',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700, fontSize: 18),
-                          ),
-                        ),
-                        SizedBox(
-                          width: double.infinity,
-                          height: 400,
-                          child: GridView.builder(
-                            itemCount: 4,
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                            ),
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding:
-                                    const EdgeInsets.only(bottom: 16, left: 16),
-                                child: Container(
-                                  width: 174,
-                                  height: 160,
-                                  decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(blurRadius: 1.5),
-                                      ]),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 16),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Column(
-                                              children: [
-                                                const Padding(
-                                                  padding: EdgeInsets.only(
-                                                      bottom: 12),
-                                                  child: Icon(
-                                                    Icons
-                                                        .favorite_border_outlined,
-                                                    color: Colors.green,
-                                                  ),
-                                                ),
-                                                const Icon(
-                                                  Icons
-                                                      .shopping_basket_outlined,
-                                                  color: Colors.green,
-                                                ),
-                                                const Padding(
-                                                  padding:
-                                                      EdgeInsets.only(top: 12),
-                                                  child: Icon(
-                                                    Icons
-                                                        .remove_red_eye_outlined,
-                                                    color: Colors.green,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Image.asset(frukt_image[index]),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 10),
-                                          child: Text(
-                                            '${frukt_name[index]}',
-                                            style: TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                        Row(
-                                          children: [
-                                            RichText(
-                                              text: TextSpan(children: [
-                                                TextSpan(
-                                                    text: '${kg[index]}',
-                                                    style: TextStyle(
-                                                        color: Colors.black)),
-                                                TextSpan(
-                                                    text: ' per ',
-                                                    style: TextStyle(
-                                                        color: Colors.grey)),
-                                                TextSpan(
-                                                    text: '${kb2[index]}',
-                                                    style: TextStyle(
-                                                        color: Colors.black)),
-                                              ]),
-                                            ),
-                                            Spacer(),
-                                            Text('4.2'),
-                                            Image.asset('asset/Vector (3).png')
-                                          ],
-                                        ),
-                                      ],
+                                child: Row(
+                                  children: [
+                                    Image.network(
+                                      'https://www.agro.uz/wp-content/uploads/2021/10/limon-1-1330x700.jpg',
+                                      height: 71,
+                                      width: 104,
                                     ),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 44, right: 13),
-                          child: Row(
-                            children: [
-                              Text(
-                                'Meats',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
+                                    const Padding(
+                                      padding: EdgeInsets.only(left: 19),
+                                      child: Text(
+                                          'Weather tips for growing corn in hilly\nregion of Nepal'),
+                                    )
+                                  ],
                                 ),
                               ),
-                              Spacer(),
-                              Text(
-                                'All',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                ),
-                              )
-                            ],
-                          ),
+                            );
+                          },
                         ),
-                        SizedBox(
-                          width: 366,
-                          height: 218,
-                          child: ListView.builder(
-                            itemCount: 2,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: const EdgeInsets.only(bottom: 26),
-                                child: Container(
-                                  width: 366,
-                                  height: 96,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(16),
-                                      ),
-                                      border: Border.all(color: Colors.grey)),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 47, bottom: 16),
+                        child: Text(
+                          'Products',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 18),
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 400,
+                        child: GridView.builder(
+                          itemCount: 4,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                          ),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding:
+                                  const EdgeInsets.only(bottom: 16, left: 16),
+                              child: Container(
+                                width: 174,
+                                height: 160,
+                                decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(blurRadius: 1.5),
+                                    ]),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 16),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 11, top: 6),
-                                        child: Text(
-                                          'Full Chicken',
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 18),
-                                        ),
+                                      Row(
+                                        children: [
+                                          Column(
+                                            children: [
+                                              const Padding(
+                                                padding:
+                                                    EdgeInsets.only(bottom: 12),
+                                                child: Icon(
+                                                  Icons
+                                                      .favorite_border_outlined,
+                                                  color: Colors.green,
+                                                ),
+                                              ),
+                                              const Icon(
+                                                Icons.shopping_basket_outlined,
+                                                color: Colors.green,
+                                              ),
+                                              const Padding(
+                                                padding:
+                                                    EdgeInsets.only(top: 12),
+                                                child: Icon(
+                                                  Icons.remove_red_eye_outlined,
+                                                  color: Colors.green,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Image.asset(frukt_image[index]),
+                                        ],
                                       ),
                                       Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 11),
-                                        child: RichText(
-                                          text: TextSpan(children: [
-                                            TextSpan(
-                                              text: 'N',
-                                              style: TextStyle(
-                                                  color: Colors.green,
-                                                  fontSize: 18),
-                                            ),
-                                            TextSpan(
-                                              text: '2400',
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 18),
-                                            )
-                                          ]),
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          '${frukt_name[index]}',
+                                          style: TextStyle(fontSize: 16),
                                         ),
                                       ),
                                       Row(
                                         children: [
-                                          InkWell(
-                                            onTap: () {
-                                              counter -= 1;
-                                              price -= soft;
-                                              setState(() {});
-                                            },
-                                            child: Icon(
-                                              Icons.minimize,
-                                              size: 25,
-                                            ),
+                                          RichText(
+                                            text: TextSpan(children: [
+                                              TextSpan(
+                                                  text: '${kg[index]}',
+                                                  style: TextStyle(
+                                                      color: Colors.black)),
+                                              TextSpan(
+                                                  text: ' per ',
+                                                  style: TextStyle(
+                                                      color: Colors.grey)),
+                                              TextSpan(
+                                                  text: '${kb2[index]}',
+                                                  style: TextStyle(
+                                                      color: Colors.black)),
+                                            ]),
                                           ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsets.only(top: 10),
-                                            child: Text(
-                                              '${counter}',
-                                              style: TextStyle(fontSize: 20),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              counter += 1;
-                                              price += soft;
-                                              setState(() {});
-                                            },
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  top: 10, left: 5),
-                                              child: Text(
-                                                '+',
-                                                style: TextStyle(fontSize: 20),
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 15, top: 10),
-                                            child: Text(
-                                              '|',
-                                              style: TextStyle(fontSize: 25),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 15, top: 10),
-                                            child: Text(
-                                              '${price}',
-                                              style: TextStyle(fontSize: 25),
-                                            ),
-                                          ),
+                                          Spacer(),
+                                          Text('4.2'),
+                                          Image.asset('asset/Vector (3).png')
                                         ],
                                       ),
                                     ],
                                   ),
                                 ),
-                              );
-                            },
-                          ),
-                        )
-                      ],
-                    ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 44, right: 13),
+                        child: Row(
+                          children: [
+                            Text(
+                              'Meats',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            ),
+                            Spacer(),
+                            Text(
+                              'All',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 366,
+                        height: 218,
+                        child: ListView.builder(
+                          itemCount: 2,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 26),
+                              child: Container(
+                                width: 366,
+                                height: 96,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(16),
+                                    ),
+                                    border: Border.all(color: Colors.grey)),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 11, top: 6),
+                                      child: Text(
+                                        'Full Chicken',
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 18),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 11),
+                                      child: RichText(
+                                        text: TextSpan(children: [
+                                          TextSpan(
+                                            text: 'N',
+                                            style: TextStyle(
+                                                color: Colors.green,
+                                                fontSize: 18),
+                                          ),
+                                          TextSpan(
+                                            text: '2400',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18),
+                                          )
+                                        ]),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        InkWell(
+                                          onTap: () {
+                                            counter -= 1;
+                                            price -= soft;
+                                            setState(() {});
+                                          },
+                                          child: Icon(
+                                            Icons.minimize,
+                                            size: 25,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 10),
+                                          child: Text(
+                                            '${counter}',
+                                            style: TextStyle(fontSize: 20),
+                                          ),
+                                        ),
+                                        InkWell(
+                                          onTap: () {
+                                            counter += 1;
+                                            price += soft;
+                                            setState(() {});
+                                          },
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 10, left: 5),
+                                            child: Text(
+                                              '+',
+                                              style: TextStyle(fontSize: 20),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 15, top: 10),
+                                          child: Text(
+                                            '|',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 15, top: 10),
+                                          child: Text(
+                                            '${price}',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),

@@ -209,57 +209,75 @@ class _Page2State extends State<Page2> {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 53, right: 53, top: 48),
-                child: Container(
-                  width: 305,
-                  height: 42,
-                  decoration: const BoxDecoration(
-                      color: Color(0xff3B5998),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(
-                        'asset/FB.png',
-                        width: 15,
-                        height: 15,
-                      ),
-                      const Text(
-                        'Continue with Facebook',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Interface();
+                      },
+                    ));
+                  },
+                  child: Container(
+                    width: 305,
+                    height: 42,
+                    decoration: const BoxDecoration(
+                        color: Color(0xff3B5998),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.asset(
+                          'asset/FB.png',
+                          width: 15,
+                          height: 15,
                         ),
-                      ),
-                    ],
+                        const Text(
+                          'Continue with Facebook',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 53, right: 53, top: 41),
-                child: Container(
-                  width: 305,
-                  height: 42,
-                  decoration: const BoxDecoration(
-                      color: Color(0xffF44336),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(
-                        'asset/google-plus.png',
-                        width: 15,
-                        height: 15,
-                      ),
-                      const Text(
-                        'Continue with Google',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Interface();
+                      },
+                    ));
+                  },
+                  child: Container(
+                    width: 305,
+                    height: 42,
+                    decoration: const BoxDecoration(
+                        color: Color(0xffF44336),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.asset(
+                          'asset/google-plus.png',
+                          width: 15,
+                          height: 15,
                         ),
-                      ),
-                    ],
+                        const Text(
+                          'Continue with Google',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
